@@ -1,0 +1,29 @@
+/*
+Theme Name: event
+Theme URI:
+Author: themelooks
+Author URI:
+Description:  A simple event theme 
+Version: 3.2.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: event
+Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+body {
+    margin: 0;
+    -webkit-font-smoothing: auto;
+}
+
+
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
