@@ -33,8 +33,7 @@ function event_gallery_section_type_metabox($metaboxes)
                       'title' => __( 'Gallery',  'event' ),
                       'add_title' => __( 'Add an Image',  'event' ),
                       'edit_title' => __( 'Edit Gallery',  'event' ),
-                      'clear_title' => __( 'Clear Gallery',  'event' ),
-                      ''
+                      'clear_title' => __( 'Clear Gallery',  'event' )
                     ),
 
                     

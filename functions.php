@@ -12,12 +12,12 @@ require_once get_theme_file_path("/inc/metaboxs/section-about.php");
 require_once get_theme_file_path("/inc/metaboxs/section-speaker.php");
 require_once get_theme_file_path("/inc/metaboxs/section-schedule.php");
 require_once get_theme_file_path("/inc/metaboxs/section-gallery.php");
+require_once get_theme_file_path("/inc/metaboxs/section-ticket.php");
+require_once get_theme_file_path("/inc/metaboxs/section-sponser.php");
 require_once get_theme_file_path("/inc/metaboxs/taxonomy-featured.php");
 
 
 // require_once(get_theme_file_path('/widgets/social-icons-widget.php'));
-
-
 
 define('CS_ACTIVE_FRAMEWORK', false); // default true
 define('CS_ACTIVE_METABOX', true); // default true

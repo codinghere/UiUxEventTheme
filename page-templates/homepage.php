@@ -29,12 +29,12 @@ get_header();
 		get_template_part("sections-templates/gallery");
 		?>
 		<?php 
-		// $section_id=;
-
+		$section_id=112;
+		
 		get_template_part("sections-templates/ticket");
 		?>
 		<?php 
-		// $section_id=;
+		$section_id=115;
 		get_template_part("sections-templates/sponser");
 		?>
 		<?php 

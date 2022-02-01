@@ -1,4 +1,11 @@
+<?php
+global $section_id;
+$event_section_metas        = get_post_meta( $section_id, 'event-sponser-type', true );
+$event_section             = get_post( $section_id );
+$event_section_title       = $event_section->post_title;
+$event_section_description = $event_section->post_content;
 
+?>
 
 
 <!-- Start Sponsors Section -->
@@ -9,9 +16,8 @@
 				<div class="col-lg-6">
 					<!-- Start Section Title -->
 					<div class="section-title text-center">
-						<h2>our <span>sponsors</span></h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-							ut labore et dolore magna aliqua.</p>
+						<h2><?php echo esc_html($event_section_title); ?></h2>
+                            <p><?php echo esc_html($event_section_description); ?></p>
 					</div>
 					<!-- End Section Title -->
 				</div>
@@ -19,9 +25,17 @@
 
 			<div class="row">
 				<div class="col-12">
+					<?php
+				
+				 if ($event_section_metas): 
+				 	// $event_sponsers_images= explode(",", $event_section_metas['opt-gallery-1']);
 
+				 	foreach($event_section_metas['sponsers'] as $event_section_meta):
+				 	 
+				 		
+					?>
 					<!-- Start Platinum Carousel Heading -->
-					<h3 class="sponsor-heading text-center">Platinum Sponsors</h3>
+					<h3 class="sponsor-heading text-center"><?php echo esc_html($event_section_meta['name']);?></h3>
 					<!-- End Platinum Carousel Heading -->
 
 					<!-- Start Platinum Carousel -->
@@ -29,75 +43,26 @@
 
 						<!-- Start Platinum Single Sponsor Logo -->
 						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo1.png" alt="">
-						</div>
-						<!-- End Platinum Single Sponsor Logo -->
-
-						<!-- Start Platinum Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo2.png" alt="">
-						</div>
-						<!-- End Platinum Single Sponsor Logo -->
-
-						<!-- Start Platinum Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo3.png" alt="">
-						</div>
-						<!-- End Platinum Single Sponsor Logo -->
-
-						<!-- Start Platinum Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo4.png" alt="">
-						</div>
-						<!-- End Platinum Single Sponsor Logo -->
-
-						<!-- Start Platinum Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo5.png" alt="">
+							<?php 
+							$event_sponsers_images = explode(",", $event_section_meta['sponsers-gallery']);
+							echo "<br>";
+							print_r($event_sponsers_images);
+							?>
+							<img src="<?php echo wp_get_attachment_image_url( $event_sponsers_images,'medium' ); ?>" alt="">
 						</div>
 						<!-- End Platinum Single Sponsor Logo -->
 					</div>
 					<!-- End Platinum Carousel -->
 
-					<!-- Start Gold Carousel Heading -->
-					<h3 class="sponsor-heading text-center">Gold Sponsors</h3>
-					<!-- End Gold Carousel Heading -->
-
-					<!-- Start Gold Carousel -->
-					<div class="owl-carousel gold-carousel">
-
-						<!-- Start Gold Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo6.png" alt="">
-						</div>
-						<!-- End Gold Single Sponsor Logo -->
-
-						<!-- Start Gold Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo7.png" alt="">
-						</div>
-						<!-- End Gold Single Sponsor Logo -->
-
-						<!-- Start Gold Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo8.png" alt="">
-						</div>
-						<!-- End Gold Single Sponsor Logo -->
-
-						<!-- Start Gold Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo9.png" alt="">
-						</div>
-						<!-- End Gold Single Sponsor Logo -->
-
-						<!-- Start Gold Single Sponsor Logo -->
-						<div class="sponsor-logo d-flex justify-content-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo10.png" alt="">
-						</div>
-						<!-- End Gold Single Sponsor Logo -->
-					</div>
+					
 					<!-- End Gold Carousel -->
+					
+					<?php
+				endforeach;
+			 	endif;
+			 	?>
 				</div>
+
 			</div>
 		</div>
 	</section>
